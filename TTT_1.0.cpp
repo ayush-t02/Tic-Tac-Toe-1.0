@@ -7,25 +7,17 @@ char turn = 'X';
 
 int person1(int loc);
 int person2(int loc1);
+void display();
+void choice();
 void player_turn();
 bool game_over();
-void display();
 
 int main()
 {
 display();
 cout<<"\t Choose X or O: ";
 cin>>c;
-if(c=='X'||c=='x')
-{
-    x = c;
-    o = 'O';
-}
-else if(c=='O'||c=='o')
-{
-   o = 'X';
-   x = c;
-}
+choice();
 while(!game_over())
 {
   player_turn();
@@ -48,6 +40,20 @@ void display()
       cout<<"\t  "<<a31;cout<<"  |";cout<<"  "<<a32;cout<<"  |";cout<<"  "<<a33;cout<<"   "<<endl;
       cout<<"\t     |     |     "<<endl;
   }
+  
+  void choice()
+  {
+  	if(c=='X'||c=='x')
+    {
+    x = c;
+    o = 'O';
+    }
+    else if(c=='O'||c=='o')
+    {
+    o = 'X';
+    x = c;
+    }  
+   }
 
 int person1(int loc)
 {
